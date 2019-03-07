@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package abstract_factory
 
 // interface
 type Army interface {
@@ -97,22 +95,4 @@ func(e *orcKingdomFactory) createKing() King {
 
 func(e *orcKingdomFactory) createArmy() Army {
 	return &OrcArmy{}
-}
-
-func main() {
-	elfKingdam := NewElfKingdomFactory()
-	elfCastle  := elfKingdam.createCastle()
-	elfKng     := elfKingdam.createKing()
-	elfArmy    := elfKingdam.createArmy()
-	fmt.Println(elfCastle.getDescription())
-	fmt.Println(elfKng.getDescription())
-	fmt.Println(elfArmy.getDescription())
-
-	orkKingdam := NewOrcKingdomFactory()
-	orkCastle  := orkKingdam.createCastle()
-	orkKng     := orkKingdam.createKing()
-	orkArmy    := orkKingdam.createArmy()
-	fmt.Println(orkCastle.getDescription())
-	fmt.Println(orkKng.getDescription())
-	fmt.Println(orkArmy.getDescription())
 }
